@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Plate Of Protein - Order</title>
+
+    <link rel="stylesheet" type="text/css" href="project.css">
+</head>
+<body>
+
+    <div id="order-section">
+        <h1 id="food-name"></h1>
+        <img id="food-image" src="" alt="" width="300" height="250">
+        <p id="food-description"></p>
+        <p>Price: $<span id="food-price"></span></p>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+        <button onclick="placeOrder()">Order Now</button>
+    </div>
+
+    <script>
+        const foodItems = {
+            proteincakes: {
+                name: "Packed Protein Cakes",
+                price: 150,
+                image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbYVoEoURtv1ZotvcrTGbxeu53aaDZVbBLOQ&s"
+            },
+            chickelette: {
+                name: "Chick-E-Lette",
+                price: 120,
+                image: "https://yousaypotatoes.com/wp-content/uploads/2021/11/chicken-omelette-2sq.jpg"
+            },
+            berrysmoothie: {
+                name: "Berry Strong Smoothie",
+                price: 90,
+                image: "https://shwetainthekitchen.com/wp-content/uploads/2021/05/berry-oat-smoothie-1-500x375.jpg"
+            },
+            mushroomegg: {
+                name: "Mushroom Egg Drop Soup",
+                price: 100,
+                image: "https://www.budgetbytes.com/wp-content/uploads/2011/11/Easy-Egg-Drop-Soup-above.jpg"
+            },
+            salmonsoup: {
+                name: "Salmon Chowder",
+                price: 150,
+                image: "https://www.feastingathome.com/wp-content/uploads/2020/03/best-salmon-chowder_-11.jpg"
+            },
+            asparagussoup: {
+                name: "Asparagus Soup",
+                price: 110,
+                image: "https://www.eatingwell.com/thmb/VOCELfHGdqeOdMRU8_lwChR6CbQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/cream-of-asparagus-soup-2000-530888e408c04b10a955a66378b85624.jpg"
+            },
+            deeznuts: {
+                name: "Deez Nut Bars",
+                price: 50,
+                image: "https://healthyhomecafe.com/wp-content/uploads/2018/05/P5200118-2.jpg"
+            },
+            chickpeas: {
+                name: "Power Roasted Chickpeas",
+                price: 60,
+                image: "https://www.culinaryhill.com/wp-content/uploads/2022/12/How-to-Roast-Chickpeas-LR-08.jpg"
+            },
+            boiledeggs: {
+                name: "Seasoned Hard-Boiled Eggs",
+                price: 40,
+                image: "https://tiffycooks.com/wp-content/uploads/2021/04/Screen-Shot-2021-04-07-at-1.01.41-AM.png"
+            },
+            fishburger: {
+                name: "Titan Fish Burger",
+                price: 180,
+                image: "https://www.kitchensanctuary.com/wp-content/uploads/2014/01/Crispy-Fish-Burger-with-Shoestring-Fries-Recipe-square-FS-500x500.jpg"
+            },
+            turkeyballs: {
+                name: "Turkey Balls",
+                price: 130,
+                image: "https://www.eatwell101.com/wp-content/uploads/2021/05/Creamy-Turkey-Meatballs-Recipe.jpg"
+            },
+            pbramen: {
+                name: "Peanut Butter And Chicken Ramen",
+                price: 150,
+                image: "https://media.foodspring.com/magazine/public/uploads/2022/03/March-2022-foodspring-205.jpg"
+            },
+            yogurttarts: {
+                name: "Greek Yogurt Tarts",
+                price: 70,
+                image: "https://www.dixiecrystals.com/sites/default/files/recipe/Mini-Greek-Yogurt-Tarts-imperial.jpg"
+            },
+            chiapudding: {
+                name: "Chocolate Chia Pudding",
+                price: 80,
+                image: "https://healthyfitnessmeals.com/wp-content/uploads/2022/04/chocolate-chia-pudding-11-1-e1649860561447-818x1024.jpg"
+            },
+            bananayogurt: {
+                name: "Banana Frozen Yogurt",
+                price: 65,
+                image: "https://www.eatwell101.com/wp-content/uploads/2021/05/banana-Frozen-Yogurt-Recipe-4.jpg"
+            }
+        };
+
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        function displayFoodDetails() {
+            const foodKey = getQueryParam('food');
+            
+            if (foodItems[foodKey]) {
+                const food = foodItems[foodKey];
+                document.getElementById('food-name').textContent = food.name;
+                document.getElementById('food-description').textContent = food.description;
+                document.getElementById('food-price').textContent = food.price;
+                document.getElementById('food-image').src = food.image;
+                document.getElementById('food-image').alt = food.name;
+            } else {
+                document.getElementById('order-section').innerHTML = "<p>Food item not found!</p>";
+            }
+        }
+
+        window.onload = displayFoodDetails;
+
+        function placeOrder() {
+            const foodName = document.getElementById('food-name').textContent;
+            const quantity = document.getElementById('quantity').value;
+            alert(`Order placed for ${quantity} ${foodName}!`);
+        }
+    </script>
+
+    <br>
+
+    <a href="home-page.html">
+    <button>Back to Menu</button>
+    </a>
+
+</body>
+</html>

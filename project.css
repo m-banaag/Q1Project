@@ -1,0 +1,107 @@
+body {
+        background-color: #090909;
+        color:white;
+        font-family: Arial;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+}
+
+.container1{
+	background-color: #030303;
+	padding: 1px;
+	box-shadow: 2px 2px 8px rgba(0,0,0, 0.6);
+}
+
+.container2, .container3, .container4, .container5, .container6, .container7{
+	text-align: center;
+	background-color: #030303;
+	width: 308px;
+	height: 400px;
+	padding: 20px;
+	box-shadow: 2px 2px 8px rgba(0,0,0, 0.6);
+}
+
+
+/* unvisited link */
+a:link {
+  color: #ffffff;
+}
+
+/* visited link */
+a:visited {
+  color: #ffffff;
+}
+
+/* mouse over link */
+a:hover {
+  color: #cccccc;
+}
+
+/* selected link */
+a:active {
+  color: darkolivegreen;
+}
+
+
+#fooditems, #fooditems2, #fooditems3, #fooditems4, #fooditems5, .container1{
+	justify-content: center;
+	display: flex;
+	column-gap: 20px;
+}
+
+.container1{
+	align-items: center;
+	column-gap: 425px;
+
+}
+
+input[type="text"], input[type="number"], input[type="textarea"] {
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    color: white;
+    background-color: #090909;
+    border: 2px solid darkolivegreen;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+}
+
+textarea { 
+    padding: 10px;
+    font-size: 16px;
+    font-family: Arial;
+    color: white;
+    background-color: #090909;
+    border: 2px solid darkolivegreen;
+    border-radius: 5px;
+    outline: none;
+    width: 300px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    background-color: darkolivegreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #49a049;
+}
+
+#comment {
+	background-color: #030303;
+	width: 308px;
+	height: 400px;
+	padding: 20px;
+	box-shadow: 2px 2px 8px rgba(0,0,0, 0.6);
+	margin: 0 auto;
+	justify-content: center;
+}
+
